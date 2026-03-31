@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darshita Bhuwalka | Chief of Staff · Financial Strategist · Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --black: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --mid: #4A4A4A;
+    --muted: #8A8A8A;
+    --border: rgba(0,0,0,0.1);
+    --accent: #B8863C;
+    --accent-light: #E8D5B0;
+    --white: #FFFFFF;
+    --section-pad: 120px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 60px;
+    mix-blend-mode: normal;
+    background: rgba(245,240,232,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-loc {
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); font-weight: 400;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--mid); text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white); background: var(--black);
+    padding: 10px 22px; text-decoration: none; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ── SECTIONS ── */
+  section { padding: var(--section-pad) 60px; }
+
+  .section-num {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 60px; display: block;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    padding: 80px 60px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 28px;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(72px, 9vw, 120px);
+    font-weight: 900; line-height: 0.9;
+    color: var(--black); margin-bottom: 36px;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 16px; line-height: 1.8; color: var(--mid);
+    max-width: 480px; margin-bottom: 48px; font-weight: 300;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px;
+  }
+  .hero-tag {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid var(--black); padding: 8px 16px; color: var(--black);
+    font-weight: 400;
+  }
+  .hero-btns { display: flex; gap: 16px; }
+  .btn-primary {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white); background: var(--black);
+    padding: 14px 28px; text-decoration: none; font-weight: 500;
+    transition: background 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-ghost {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--black); border: 1px solid var(--black);
+    padding: 14px 28px; text-decoration: none; font-weight: 400;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-ghost:hover { background: var(--black); color: var(--white); }
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--black);
+  }
+  .hero-right-inner {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-img-placeholder {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-photo-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(184,134,60,0.15) 0%, rgba(13,13,13,0.4) 100%);
+  }
+  .hero-right-text {
+    position: absolute; bottom: 40px; left: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.1em; font-style: italic;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 40px; right: 60px;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); writing-mode: vertical-rl;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-scroll::before {
+    content: ''; display: block; width: 1px; height: 60px;
+    background: var(--muted); animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%,100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.4; }
+  }
+  .hero-big-bg {
+    position: absolute; bottom: -40px; left: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 240px; font-weight: 900; line-height: 1;
+    color: rgba(0,0,0,0.04); pointer-events: none;
+    user-select: none; z-index: 0;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--black); padding: 18px 0; overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; gap: 0;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); padding: 0 32px;
+    display: inline-flex; align-items: center; gap: 32px;
+  }
+  .marquee-item::after {
+    content: '·'; color: var(--accent); font-size: 18px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── CAREER ── */
+  #career { background: var(--white); }
+  .career-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+  .career-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1;
+  }
+  .career-headline em { font-style: italic; color: var(--accent); }
+  .career-stats {
+    display: flex; flex-direction: column; justify-content: flex-end; gap: 20px;
+  }
+  .career-stat-row {
+    display: flex; gap: 40px; flex-wrap: wrap;
+  }
+  .career-stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700; color: var(--black);
+  }
+  .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 0; padding: 36px 0;
+    border-top: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .tl-item:hover { background: rgba(184,134,60,0.04); }
+  .tl-date {
+    font-size: 12px; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 400; padding-top: 4px;
+  }
+  .tl-content {}
+  .tl-company {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; margin-bottom: 4px;
+  }
+  .tl-role {
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 12px;
+  }
+  .tl-desc { font-size: 15px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+  .tl-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tl-pill {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--cream); padding: 5px 12px; color: var(--mid);
+    border: 1px solid var(--border);
+  }
+
+  /* ── VENTURES ── */
+  #ventures { background: var(--black); color: var(--cream); }
+  #ventures .section-num { color: rgba(255,255,255,0.3); }
+  .ventures-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; align-items: end; }
+  .ventures-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1;
+    color: var(--cream);
+  }
+  .ventures-headline em { font-style: italic; color: var(--accent); }
+  .ventures-sub { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; }
+
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); }
+  .project-card {
+    background: var(--black); padding: 48px;
+    transition: background 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .project-card:hover { background: #161616; }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--accent);
+    transition: height 0.3s;
+  }
+  .project-card:hover::before { height: 100%; }
+  .project-abbr {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900; color: rgba(255,255,255,0.08);
+    margin-bottom: 24px; line-height: 1;
+  }
+  .project-cat {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 12px;
+  }
+  .project-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300; }
+  .project-metrics { display: flex; gap: 24px; margin-top: 24px; }
+  .project-metric { display: flex; flex-direction: column; gap: 2px; }
+  .pm-num { font-size: 20px; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif; }
+  .pm-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  /* ── WRITING ── */
+  #writing { background: var(--cream); }
+  .writing-header { margin-bottom: 60px; }
+  .writing-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1;
+  }
+  .writing-headline em { font-style: italic; color: var(--accent); }
+  .posts-list { display: flex; flex-direction: column; gap: 0; }
+  .post-item {
+    display: grid; grid-template-columns: 80px 1fr 120px;
+    gap: 40px; padding: 32px 0; border-top: 1px solid var(--border);
+    align-items: center; text-decoration: none; color: inherit;
+    transition: all 0.2s;
+  }
+  .post-item:last-child { border-bottom: 1px solid var(--border); }
+  .post-item:hover .post-title { color: var(--accent); }
+  .post-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: rgba(0,0,0,0.08); }
+  .post-content {}
+  .post-cat { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .post-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; transition: color 0.2s; }
+  .post-excerpt { font-size: 14px; color: var(--muted); line-height: 1.6; margin-top: 6px; font-weight: 300; }
+  .post-arrow { font-size: 20px; text-align: right; color: var(--muted); transition: transform 0.2s, color 0.2s; }
+  .post-item:hover .post-arrow { transform: translateX(6px); color: var(--accent); }
+
+  /* ── ARC ── */
+  #arc { background: var(--white); }
+  .arc-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1;
+    margin-bottom: 80px;
+  }
+  .arc-headline em { font-style: italic; color: var(--accent); }
+  .arc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .arc-card { background: var(--white); padding: 48px 36px; }
+  .arc-num {
+    font-size: 11px; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 24px;
+  }
+  .arc-title {
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 6px;
+  }
+  .arc-sub { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  .arc-desc { font-size: 14px; color: var(--mid); line-height: 1.7; font-weight: 300; margin-bottom: 24px; }
+  .arc-quote {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 14px; color: var(--muted); border-left: 2px solid var(--accent-light);
+    padding-left: 16px; line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  #connect { background: var(--black); color: var(--cream); }
+  #connect .section-num { color: rgba(255,255,255,0.3); }
+  .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .connect-left {}
+  .connect-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 60px); font-weight: 700; line-height: 1.1;
+    color: var(--cream); margin-bottom: 24px;
+  }
+  .connect-headline em { font-style: italic; color: var(--accent); }
+  .connect-desc { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; margin-bottom: 40px; }
+  .connect-links { display: flex; flex-direction: column; gap: 16px; }
+  .connect-link {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    display: flex; align-items: center; gap: 12px; transition: color 0.2s;
+  }
+  .connect-link::before { content: '→'; color: var(--accent); }
+  .connect-link:hover { color: var(--cream); }
+
+  .connect-form { display: flex; flex-direction: column; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .form-input, .form-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--cream); font-family: 'DM Sans', sans-serif;
+    font-size: 14px; padding: 14px 16px;
+    outline: none; transition: border-color 0.2s; resize: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--black); background: var(--accent);
+    border: none; padding: 16px 32px; cursor: pointer; font-weight: 500;
+    transition: background 0.2s; align-self: flex-start;
+  }
+  .form-btn:hover { background: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal); padding: 48px 60px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--cream);
+  }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+  .footer-nav { display: flex; gap: 24px; justify-content: center; }
+  .footer-nav a {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-nav a:hover { color: var(--cream); }
+  .footer-copy { text-align: right; font-size: 11px; color: rgba(255,255,255,0.2); }
+
+  /* ── FADE IN ── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 100px 24px 60px; }
+    .career-header, .ventures-header, .connect-grid { grid-template-columns: 1fr; }
+    .projects-grid, .arc-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; text-align: center; }
+    .footer-copy { text-align: center; }
+    .post-item { grid-template-columns: 1fr; gap: 8px; }
+    .post-num { display: none; }
+    .post-arrow { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-loc">Dubai — 2026</span>
+  <ul class="nav-links">
+    <li><a href="#career">The Career</a></li>
+    <li><a href="#ventures">The Work</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a href="#connect" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left reveal">
+    <p class="hero-eyebrow">Portfolio 2026 / Vol. 01</p>
+    <h1 class="hero-name">Darshita<em>.</em></h1>
+    <div class="hero-tags">
+      <span class="hero-tag">Chief of Staff</span>
+      <span class="hero-tag">Financial Strategist</span>
+      <span class="hero-tag">P&L Owner</span>
+      <span class="hero-tag">Builder</span>
+    </div>
+    <p class="hero-desc">
+      A decade of navigating boardrooms and balance sheets — from KPMG risk advisory to Infosys corporate finance, EY Parthenon consulting, and now Chief of Staff to the Country MD at Protiviti. I've shaped $275M toplines, advised C-suites, and turned strategic blueprints into measurable wins. Dubai / Open to speaking, collabs & advisory.
+    </p>
+    <div class="hero-btns">
+      <a href="#ventures" class="btn-primary">What I've built →</a>
+      <a href="#connect" class="btn-ghost">Work with me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1A1A1A"/>
+            <stop offset="100%" stop-color="#0D0D0D"/>
+          </linearGradient>
+          <linearGradient id="heroAccent" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#B8863C" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#B8863C" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="800" fill="url(#heroBg)"/>
+        <rect width="600" height="800" fill="url(#heroAccent)"/>
+        <!-- Abstract geometric lines -->
+        <line x1="0" y1="200" x2="600" y2="600" stroke="rgba(184,134,60,0.15)" stroke-width="1"/>
+        <line x1="0" y1="400" x2="600" y2="200" stroke="rgba(184,134,60,0.08)" stroke-width="0.5"/>
+        <circle cx="480" cy="160" r="120" fill="none" stroke="rgba(184,134,60,0.1)" stroke-width="1"/>
+        <circle cx="480" cy="160" r="80" fill="none" stroke="rgba(184,134,60,0.07)" stroke-width="0.5"/>
+        <!-- Grid dots -->
+        <g fill="rgba(184,134,60,0.2)">
+          <circle cx="100" cy="100" r="1.5"/>
+          <circle cx="200" cy="100" r="1.5"/>
+          <circle cx="300" cy="100" r="1.5"/>
+          <circle cx="400" cy="100" r="1.5"/>
+          <circle cx="100" cy="200" r="1.5"/>
+          <circle cx="200" cy="200" r="1.5"/>
+          <circle cx="300" cy="200" r="1.5"/>
+          <circle cx="100" cy="300" r="1.5"/>
+          <circle cx="200" cy="300" r="1.5"/>
+        </g>
+        <!-- Big D letterform -->
+        <text x="60" y="560" font-family="Playfair Display, serif" font-size="380" font-weight="900" fill="rgba(255,255,255,0.03)" dominant-baseline="auto">D</text>
+        <!-- Stat callouts -->
+        <rect x="48" y="600" width="160" height="70" fill="rgba(184,134,60,0.12)" rx="0"/>
+        <text x="64" y="625" font-family="DM Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="2">TOPLINE GROWTH</text>
+        <text x="64" y="655" font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="#B8863C">$275M</text>
+        <rect x="228" y="600" width="160" height="70" fill="rgba(255,255,255,0.04)" rx="0"/>
+        <text x="244" y="625" font-family="DM Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="2">WIN EFFICIENCY</text>
+        <text x="244" y="655" font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.7)">+20%</text>
+        <rect x="408" y="600" width="140" height="70" fill="rgba(255,255,255,0.04)" rx="0"/>
+        <text x="424" y="625" font-family="DM Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="2">ACCOUNTS</text>
+        <text x="424" y="655" font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.7)">$130M</text>
+      </svg>
+      <div class="hero-right-text">* Chief of Staff · Strategist · Builder</div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+  <div class="hero-big-bg">D</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Chief of Staff</span>
+    <span class="marquee-item">Financial Strategist</span>
+    <span class="marquee-item">$275M Topline</span>
+    <span class="marquee-item">P&L Owner</span>
+    <span class="marquee-item">Protiviti</span>
+    <span class="marquee-item">EY Parthenon</span>
+    <span class="marquee-item">Infosys</span>
+    <span class="marquee-item">KPMG</span>
+    <span class="marquee-item">Dubai, UAE</span>
+    <span class="marquee-item">Builder</span>
+    <span class="marquee-item">GTM Strategy</span>
+    <span class="marquee-item">AI + Human Touch</span>
+    <!-- Repeat for seamless loop -->
+    <span class="marquee-item">Chief of Staff</span>
+    <span class="marquee-item">Financial Strategist</span>
+    <span class="marquee-item">$275M Topline</span>
+    <span class="marquee-item">P&L Owner</span>
+    <span class="marquee-item">Protiviti</span>
+    <span class="marquee-item">EY Parthenon</span>
+    <span class="marquee-item">Infosys</span>
+    <span class="marquee-item">KPMG</span>
+    <span class="marquee-item">Dubai, UAE</span>
+    <span class="marquee-item">Builder</span>
+    <span class="marquee-item">GTM Strategy</span>
+    <span class="marquee-item">AI + Human Touch</span>
+  </div>
+</div>
+
+<!-- CAREER -->
+<section id="career">
+  <span class="section-num">02 — The Career</span>
+  <div class="career-header reveal">
+    <h2 class="career-headline">A Decade of<br><em>Scaling.</em></h2>
+    <div class="career-stats">
+      <div class="career-stat-row">
+        <div class="career-stat">
+          <span class="stat-num">$275M</span>
+          <span class="stat-label">Topline Target</span>
+        </div>
+        <div class="career-stat">
+          <span class="stat-num">$130M</span>
+          <span class="stat-label">Accounts Managed</span>
+        </div>
+        <div class="career-stat">
+          <span class="stat-num">+20%</span>
+          <span class="stat-label">Win Efficiency Lift</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-date">Jul 2024 — Present</div>
+      <div class="tl-content">
+        <div class="tl-company">Protiviti Middle East</div>
+        <div class="tl-role">Chief of Staff to Country MD & CEO</div>
+        <div class="tl-desc">Conceptualised growth strategy to hit a $275M topline. Presented CEO's strategic plan to 200+ GCC leaders. Launched account management framework for $130M accounts — overcame leadership resistance and lifted win efficiency by 20%.</div>
+        <div class="tl-pills">
+          <span class="tl-pill">C-Suite Advisory</span>
+          <span class="tl-pill">GTM Strategy</span>
+          <span class="tl-pill">$275M Growth Plan</span>
+          <span class="tl-pill">GCC Markets</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">May 2023 — Jun 2024</div>
+      <div class="tl-content">
+        <div class="tl-company">EY Parthenon</div>
+        <div class="tl-role">Consultant, Management Consulting</div>
+        <div class="tl-desc">Delivered high-impact management consulting engagements across strategy, operations, and transformation. Advised leadership on growth and operational playbooks.</div>
+        <div class="tl-pills">
+          <span class="tl-pill">Management Consulting</span>
+          <span class="tl-pill">Strategy</span>
+          <span class="tl-pill">Operations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Jan 2020 — Mar 2022</div>
+      <div class="tl-content">
+        <div class="tl-company">Infosys Ltd.</div>
+        <div class="tl-role">Senior Associate, Corporate Finance</div>
+        <div class="tl-desc">Led corporate finance initiatives, financial modelling, and strategic analysis. Built frameworks that improved forecasting accuracy and supported large-scale capital decisions.</div>
+        <div class="tl-pills">
+          <span class="tl-pill">Corporate Finance</span>
+          <span class="tl-pill">Financial Modelling</span>
+          <span class="tl-pill">P&L Management</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Sep 2018 — Sep 2019</div>
+      <div class="tl-content">
+        <div class="tl-company">KPMG</div>
+        <div class="tl-role">Executive, Risk Advisory</div>
+        <div class="tl-desc">Advised on enterprise risk frameworks and conducted audits across diverse client portfolios. Developed an early fluency in regulatory compliance and business risk that still informs my strategic lens.</div>
+        <div class="tl-pills">
+          <span class="tl-pill">Risk Advisory</span>
+          <span class="tl-pill">Audit</span>
+          <span class="tl-pill">Compliance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <span class="section-num">03 — The Work</span>
+  <div class="ventures-header reveal">
+    <h2 class="ventures-headline">Building<br><em>in Public.</em></h2>
+    <p class="ventures-sub">From 3-year strategic blueprints to ground-up 0-to-1 initiatives. Here's what I've been driving.</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-abbr">GTM</div>
+      <div class="project-cat">Strategic Planning</div>
+      <div class="project-title">GTM Strategy & 3-Year Blueprint</div>
+      <div class="project-desc">Formulated a 3-year strategic blueprint to scale business to 1.8× (23% CAGR) by solving for industry expertise, skill development, and a client-first approach. Designed annual plans for 25 service categories across 3 countries in collaboration with solution and account leaders.</div>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="pm-num">1.8×</span>
+          <span class="pm-label">Scale Target</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">23%</span>
+          <span class="pm-label">CAGR</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">3</span>
+          <span class="pm-label">Countries</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-abbr">0→1</div>
+      <div class="project-cat">Initiative Execution</div>
+      <div class="project-title">Top 13 Accounts Growth Engine</div>
+      <div class="project-desc">Leading growth across the top 13 accounts (70% of revenue share) via 4 key initiatives: customer segmentation, integrated solutions delivery, and skill set development. Improved utilisation by 5% through a cross-utilisation resource model and chargeability forecasting.</div>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="pm-num">70%</span>
+          <span class="pm-label">Revenue Share</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">+5%</span>
+          <span class="pm-label">Utilisation</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">4</span>
+          <span class="pm-label">Key Initiatives</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-abbr">BD</div>
+      <div class="project-cat">Operational Scale</div>
+      <div class="project-title">Design Team Scale-Up</div>
+      <div class="project-desc">Reduced business development time by ~12 man-hours per proposal through the launch of a dedicated design team. Scaled it from a 6-member pilot to a 20-member operation — turning proposal quality from a bottleneck into a competitive differentiator.</div>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="pm-num">−12h</span>
+          <span class="pm-label">Per Proposal</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">6→20</span>
+          <span class="pm-label">Team Growth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-abbr">AI</div>
+      <div class="project-cat">Building with AI</div>
+      <div class="project-title">AI Tools & Retail Digest</div>
+      <div class="project-desc">Exploring the intersection of AI and business operations. Writing and building tools that make complex strategy accessible — because the best insight shouldn't stay in a boardroom. Retail Digest covers trends, analysis, and what the numbers actually mean.</div>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="pm-num">AI</span>
+          <span class="pm-label">Assisted</span>
+        </div>
+        <div class="project-metric">
+          <span class="pm-num">Public</span>
+          <span class="pm-label">Building</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <span class="section-num">04 — The Substack</span>
+  <div class="writing-header reveal">
+    <h2 class="writing-headline">Writing<br><em>in Public.</em></h2>
+  </div>
+  <div class="posts-list">
+    <a href="#" class="post-item reveal">
+      <div class="post-num">01</div>
+      <div class="post-content">
+        <div class="post-cat">Strategy · Mar 2026 — Featured</div>
+        <div class="post-title">Why I Left Finance to Become a Builder</div>
+        <div class="post-excerpt">After years of shaping strategy for others, I started building things myself. Here's what the boardroom never told me.</div>
+      </div>
+      <div class="post-arrow">→</div>
+    </a>
+    <a href="#" class="post-item reveal">
+      <div class="post-num">02</div>
+      <div class="post-content">
+        <div class="post-cat">AI · Feb 2026</div>
+        <div class="post-title">The AI Tools I Actually Use Every Week</div>
+        <div class="post-excerpt">Not a listicle. A real breakdown of what stays in the stack and what gets deleted after two days.</div>
+      </div>
+      <div class="post-arrow">→</div>
+    </a>
+    <a href="#" class="post-item reveal">
+      <div class="post-num">03</div>
+      <div class="post-content">
+        <div class="post-cat">Retail · Jan 2026</div>
+        <div class="post-title">Retail in the GCC: What the Numbers Don't Say</div>
+        <div class="post-excerpt">Managing $130M accounts taught me that spreadsheets are just vibes with formulas.</div>
+      </div>
+      <div class="post-arrow">→</div>
+    </a>
+    <a href="#" class="post-item reveal">
+      <div class="post-num">04</div>
+      <div class="post-content">
+        <div class="post-cat">Operations · Dec 2025</div>
+        <div class="post-title">Scaling Operations Without Losing Your Mind</div>
+        <div class="post-excerpt">From KPMG audit trails to C-suite briefings — how I learned to operate at every altitude.</div>
+      </div>
+      <div class="post-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- ARC -->
+<section id="arc">
+  <span class="section-num">05 — The Arc</span>
+  <h2 class="arc-headline reveal">Three chapters.<br><em>One thread.</em></h2>
+  <div class="arc-grid">
+    <div class="arc-card reveal">
+      <div class="arc-num">01</div>
+      <div class="arc-title">Risk & Finance</div>
+      <div class="arc-sub">The Roots</div>
+      <div class="arc-desc">Started at KPMG learning to see around corners — how companies fail, how risk compounds, how numbers tell stories. Then moved to Infosys to understand the P&L from the inside out.</div>
+      <div class="arc-quote">"First lesson: the spreadsheet is never the whole truth."</div>
+    </div>
+    <div class="arc-card reveal">
+      <div class="arc-num">02</div>
+      <div class="arc-title">Strategy & Markets</div>
+      <div class="arc-sub">The Scaling</div>
+      <div class="arc-desc">EY Parthenon sharpened the consulting lens. Then Protiviti — Chief of Staff, C-suite, GCC markets. Managing $275M growth plans and presenting to 200+ leaders. Learned that strategy without execution is just a deck.</div>
+      <div class="arc-quote">"PowerPoint became the deliverable. Execution became the differentiator."</div>
+    </div>
+    <div class="arc-card reveal">
+      <div class="arc-num">03</div>
+      <div class="arc-title">AI & Building</div>
+      <div class="arc-sub">The Pivot</div>
+      <div class="arc-desc">Now building with AI as a creative partner — tools, writing, systems. Not a developer. An operator who builds. Retail Digest, AI experiments, and whatever's next. A new chapter is loading.</div>
+      <div class="arc-quote">"Built this entire portfolio with AI. Welcome to the chaos."</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <span class="section-num">06 — Correspondence</span>
+  <div class="connect-grid">
+    <div class="connect-left reveal">
+      <h2 class="connect-headline">Let's build<br><em>something.</em></h2>
+      <p class="connect-desc">I'm Chief of Staff at Protiviti, writing about AI and retail, and always open to the right conversation. If you're a founder who needs a strategist, an event that needs a speaker, or a collaboration worth exploring — let's talk.</p>
+      <div class="connect-links">
+        <a href="https://linkedin.com/in/darshita-bhuwalka" target="_blank" class="connect-link">LinkedIn</a>
+        <a href="mailto:hello@darshitabhuwalka.com" class="connect-link">Direct Email</a>
+      </div>
+    </div>
+    <div class="connect-form reveal">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-input" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">The Project / The Inquiry</label>
+        <textarea class="form-textarea" rows="4" placeholder="Tell me what you're building..."></textarea>
+      </div>
+      <button class="form-btn" onclick="handleSubmit()">Dispatch Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">Darshita Bhuwalka</div>
+    <div class="footer-tagline">Chief of Staff · Financial Strategist · Builder</div>
+  </div>
+  <nav class="footer-nav">
+    <a href="#career">Career</a>
+    <a href="#ventures">Work</a>
+    <a href="#writing">Writing</a>
+    <a href="#connect">Connect</a>
+  </nav>
+  <div class="footer-copy">Dubai, UAE · 2026 © Darshita Bhuwalka<br>Built with AI, in balance with the human touch.</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const btn = document.querySelector('.form-btn');
+    btn.textContent = 'Message sent ✓';
+    btn.style.background = '#4A7C59';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.textContent = 'Dispatch Message';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
