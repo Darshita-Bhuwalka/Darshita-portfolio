@@ -154,13 +154,9 @@
     display: block;
     cursor: default;
   }
-```
-  .hero-scroll {
-    position: absolute; bottom: 40px; right: 60px;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--muted); writing-mode: vertical-rl;
-    display: flex; align-items: center; gap: 12px;
-  }
+```.hero-scroll {
+  display: none;
+}
   .hero-scroll::before {
     content: ''; display: block; width: 1px; height: 60px;
     background: var(--muted); animation: scrollLine 2s ease-in-out infinite;
@@ -505,7 +501,6 @@
       </div>
     </div>
   </div>
-  <div class="hero-scroll">Scroll</div>
   <div class="hero-big-bg">D</div>
 </section>
 
